@@ -1,0 +1,145 @@
+/* DompetKeluarga — gaya situs anggaran: hijau uang, biru tenang, kartu putih. */
+:root {
+  --green: #2e7d32;
+  --blue: #1565c0;
+  --teal: #00838f;
+  --red: #c62828;
+  --ink: #1c2b21;
+  --muted: #5f6f63;
+  --line: #dfe7df;
+  --bg: #f4f7f4;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+body { margin: 0; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+a { color: var(--blue); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; }
+
+/* Header */
+.top { background: var(--green); color: #fff; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; }
+.brand { color: #fff; font-weight: 800; font-size: 22px; text-decoration: none; letter-spacing: .2px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
+nav a { color: #d7ead8; text-decoration: none; padding: 6px 12px; border-radius: 20px; font-weight: 600; }
+nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
+nav a.active { background: #fff; color: var(--green); }
+
+h1 { font-size: 28px; margin: 26px 0 6px; }
+h2 { font-size: 19px; margin: 0 0 12px; }
+.lede { color: var(--muted); margin: 0 0 20px; }
+.note { color: var(--muted); font-size: 14px; }
+
+/* Kartu ringkasan */
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.card-label { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+.card-num { font-size: 24px; font-weight: 800; margin: 6px 0 4px; }
+.card-num.green { color: var(--green); }
+.card-num.blue { color: var(--blue); }
+.card-num.teal { color: var(--teal); }
+.card-num.red { color: var(--red); }
+.card-sub { font-size: 13px; color: var(--muted); }
+
+/* Panel dan grid */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+.grid2 .panel { margin-bottom: 0; }
+
+/* Batang horizontal */
+.hbar-row { display: grid; grid-template-columns: 190px 1fr 210px; gap: 10px; align-items: center; margin: 9px 0; font-size: 14px; }
+.hbar-label { font-weight: 600; }
+.hbar-track { background: #eef2ee; border-radius: 6px; height: 14px; overflow: hidden; }
+.hbar-fill { height: 100%; border-radius: 6px; min-width: 2px; }
+.hbar-fill.over { outline: 2px solid var(--red); }
+.hbar-value { color: var(--muted); text-align: right; white-space: nowrap; }
+
+/* Bilah kemajuan */
+.pbar { background: #eef2ee; border-radius: 6px; height: 12px; overflow: hidden; margin: 8px 0 4px; }
+.pfill { height: 100%; border-radius: 6px; }
+.pct { font-size: 13px; color: var(--muted); }
+
+/* Tabel */
+.table-scroll { overflow-x: auto; }
+table.tx { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.tx th, table.tx td { padding: 9px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+table.tx th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .4px; }
+table.tx td.r, table.tx th.r { text-align: right; font-variant-numeric: tabular-nums; }
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; }
+
+/* Daftar transaksi */
+.tx-list { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.tx-list li { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.tx-list li span:last-child { white-space: nowrap; }
+.bill-list { list-style: none; margin: 0 0 10px; padding: 0; font-size: 14px; }
+.bill-list li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+
+/* Tujuan */
+.goal-head { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+.goal-mini { margin-bottom: 16px; }
+.goal-pct { font-size: 13px; color: var(--muted); }
+.goal-big { margin: 6px 0 2px; }
+.goal-big .goal-num { font-size: 26px; font-weight: 800; color: var(--teal); }
+
+/* Formulir */
+.form { display: grid; gap: 12px; }
+.form.inline { grid-template-columns: repeat(3, 1fr) auto; align-items: end; }
+.form label { display: grid; gap: 5px; font-size: 14px; font-weight: 600; }
+.form input, .form select { font: inherit; padding: 9px 10px; border: 1px solid #b9c6b9; border-radius: 8px; background: #fff; width: 100%; }
+.form-msg { color: var(--green); font-size: 14px; margin: 0; min-height: 20px; }
+.filter { display: block; margin-bottom: 12px; font-size: 14px; font-weight: 600; }
+.filter select { font: inherit; padding: 7px 9px; border: 1px solid #b9c6b9; border-radius: 8px; margin-left: 6px; }
+.goal-add { display: flex; gap: 10px; align-items: end; margin-top: 12px; }
+.goal-add label { flex: 1; display: grid; gap: 5px; font-size: 14px; font-weight: 600; }
+.goal-add input { font: inherit; padding: 9px 10px; border: 1px solid #b9c6b9; border-radius: 8px; width: 100%; }
+
+/* Tombol */
+.btn { display: inline-block; background: #e8f2e8; color: var(--green); font-weight: 700; text-decoration: none; border: 1px solid #c8e0c8; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+.btn:hover { background: #d8ecd8; }
+.btn.primary { background: var(--green); color: #fff; border-color: var(--green); }
+.btn.primary:hover { background: #256b28; }
+.btn.small { padding: 5px 10px; font-size: 13px; }
+.btn.danger { background: #fdecea; color: var(--red); border-color: #f5c6c0; }
+
+/* Kalender */
+table.cal { width: 100%; border-collapse: collapse; table-layout: fixed; }
+table.cal th, table.cal td { border: 1px solid var(--line); padding: 6px; vertical-align: top; height: 74px; font-size: 13px; }
+table.cal th { background: #eef4ee; height: auto; text-align: center; }
+table.cal td.empty { background: #f7faf7; }
+.cal-day { font-weight: 700; margin-bottom: 4px; }
+.cal-bill { font-size: 11px; line-height: 1.3; border-radius: 4px; padding: 2px 5px; margin: 2px 0; display: inline-block; }
+.cal-bill.unpaid { background: #fff3e0; color: #8d4e00; }
+.cal-bill.paid { background: #e8f5e9; color: var(--green); text-decoration: line-through; }
+td.has-bill { background: #fffdf5; }
+.tag { display: inline-block; padding: 3px 9px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+.tag.ok { background: #e8f5e9; color: var(--green); }
+.tag.warn { background: #fff3e0; color: #8d4e00; }
+
+/* Donat & grafik */
+.donut-wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.donut-center { font-size: 13px; fill: var(--muted); }
+.donut-center-num { font-size: 17px; font-weight: 800; fill: var(--ink); }
+.legend { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.legend li { margin: 5px 0; }
+.legend .dot { width: 11px; height: 11px; }
+.chart-key { display: flex; gap: 18px; font-size: 13px; color: var(--muted); margin-top: 6px; }
+.chart-key i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; }
+svg .grid { stroke: #e3eae3; stroke-width: 1; }
+svg .axis { font-size: 11px; fill: var(--muted); }
+.insights { margin: 0; padding-left: 20px; font-size: 15px; }
+.insights li { margin: 10px 0; }
+
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 10px; }
+
+/* Ponsel */
+@media (max-width: 760px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+  .grid2 { grid-template-columns: 1fr; }
+  .hbar-row { grid-template-columns: 120px 1fr; }
+  .hbar-value { grid-column: 2; text-align: left; }
+  .form.inline { grid-template-columns: 1fr; }
+  .goal-add { flex-direction: column; align-items: stretch; }
+  h1 { font-size: 23px; }
+  table.cal td { height: 56px; font-size: 11px; padding: 3px; }
+  .cal-bill { font-size: 9px; }
+  table.tx { font-size: 13px; }
+}
